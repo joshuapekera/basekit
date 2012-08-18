@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Theme_Joshuapekera extends Theme {
+class Theme_Basekit extends Theme {
 
-    public $name			= 'Joshua Pekera';
+    public $name			= 'BaseKit';
     public $author			= 'Joshua Pekera';
     public $author_website	= 'http://joshuapekera.com/';
     public $website			= 'http://joshuapekera.com/';
