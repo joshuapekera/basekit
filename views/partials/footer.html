@@ -1,0 +1,112 @@
+    <footer>
+    	<div class="row-fluid">
+        	<div class="span12">
+                <ul class="nav nav-pills">
+                  {{ navigation:links group="footer" }}
+                </ul>
+            </div>
+        </div>
+      <div class="row-fluid">
+        <div class="span6">
+          <div id="poweredby">
+          	<p><a target="_blank" href="http://pyrocms.com/"><small>{{ theme:image file="logo.png" alt="Powered by PyroCMS" }} {{ helper:lang line="powered_by_pyrocms" }}</small></a></p>
+          </div>
+        </div>
+        <div class="span6">
+          <p class="pull-right"><small>&copy; {{ helper:date format="Y" }} {{ settings:site_name }}. {{ helper:lang line="all_right_reserved" }}</small></p>
+        </div>
+      </div>
+    </footer>
+    </div><!--/.fluid-container-->
+    
+     <!-- modals -->
+     <div class="modal hide" id="myModal">
+    	<div class="modal-header">
+   	 	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>{{ helper:lang line='user_login_btn' }}</h3>
+   		 </div>
+         <form action="{{ url:site uri='users/login' }}" method="post" accept-charset="utf-8" id="login-small">
+   		 <div class="modal-body">
+   		 
+			<input type="hidden" name="redirect_to" value="{{ url:current }}" />
+			<ul class="unstyled">
+				<li class="email">
+					<input type="text" id="email" name="email" maxlength="120" placeholder="{{ helper:lang line="user_email" }}" />
+				</li>
+
+				<li class="pword">
+					<input type="password" id="password" name="password" maxlength="20" placeholder="{{ helper:lang line="user_password" }}" />
+				</li>
+
+				<li class="form-buttons">
+					
+					<label><input type="checkbox" id="remember-checksidebar" name="remember" value="1"  /> {{ helper:lang line="user_remember" }}</label>
+				</li>
+			</ul>
+		
+   		 </div>
+    	 <div class="modal-footer">
+         <div class="pull-left">
+         <a class="btn" href="{{ url:site }}register">{{ helper:lang line="user_register_btn" }}</a>
+         </div>
+   		 <a href="#" class="btn" data-dismiss="modal">Close</a>
+         <input class="btn btn-primary btn-large" type="submit" value="{{ helper:lang line='user_login_btn' }}" name="btnLogin" />
+   		 </div>
+         </form>
+    </div>
+    <!--/ modals -->
+
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started --> 
+<!--[if lt IE 7 ]>
+    	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  	<![endif]--> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline --> 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+<script>window.jQuery || document.write('{{ theme:path }}libs/jquery.js')</script> 
+	{{ if theme:options:bootstrap_transitions == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-transition.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_alert == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-alert.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_modal == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-modal.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_dropdown == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-dropdown.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_scrollspy == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-scrollspy.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_tab == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-tab.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_tooltip == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-tooltip.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_popover == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-popover.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_button == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-button.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_collapse == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-collapse.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_carousel == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-carousel.js" }}
+    {{ endif }}
+    {{ if theme:options:bootstrap_typeahead == 'yes' }}
+    	{{ theme:js file="libs/bootstrap/bootstrap-typeahead.js" }}
+    {{ endif }}
+
+    <!-- Scripts --> 
+    {{ theme:js file="plugins.js" }}
+  	{{ theme:js file="script.js" }} 
+  	<!-- End Scripts -->
+</body></html>

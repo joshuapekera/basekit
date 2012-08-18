@@ -1,0 +1,27 @@
+{{ theme:partial name="header" }}
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                {{ session:messages success="success-box" notice="notice-box" error="error-box" }}
+            </div>
+        </div>
+      <div class="row-fluid">
+        <div class="span12">
+        {{ if { url:segments segment="1" } == '' }}
+          <div class="hero-unit">
+            <h1>Arrrrrg!</h1>
+            <p>This be a base theme template built by <a href="http://twitter.com/joshuapekera">@joshuapekera</a>. It be meant as a prototyping tool for product design and development. It be packed full of treasure and loot!</p>
+            <p><a href="http://twitter.github.com/bootstrap/" target="_blank" class="btn btn-primary btn-large">Learn more - Documentation Bootstrap &raquo;</a><br/><br/>
+            <p><small>Removing or editing path to this banner: ../addons/shared_addons/themes/bs/layouts/default.html</small></p>
+          </div>
+          {{ endif }}
+          <div class="row-fluid">
+           	<div class="span12">
+         	 {{ template:body }}
+          	</div><!--/span-->
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr />
+{{ theme:partial name="footer" }}

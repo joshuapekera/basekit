@@ -1,0 +1,25 @@
+{{ if user:logged_in }}
+<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              {{ helper:gravatar email=user:email size="20" }} {{ user:display_name }}
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+            	<li>
+                {{ if settings:enable_profiles }}
+					<a href="{{ url:site uri='edit-profile' }}"><i class="icon-pencil"></i>  {{ helper:lang line="edit_profile_label" }}</a>
+				{{ endif }}
+                </li>
+				<li class="divider"></li>
+				<li>
+                {{ if user:has_cp_permissions }}
+					<a href="{{ url:site uri='admin' }}" target="_blank"><i class="icon-edit"></i> {{ helper:lang line="global:control-panel" }}</a>
+				{{ endif }}
+				</li>
+                <li>
+					<a href="{{ url:site uri='users/logout' }}"><i class="icon-off"></i> {{ helper:lang line="logout_label" }}</a>
+                </li>
+            </ul>
+{{ else }}
+		<a href="{{ url:site }}register" class="btn btn-small"><i class="icon-user"></i> {{ helper:lang line="user_register_btn" }}</a>
+		<a data-toggle="modal" href="#myModal" class="btn btn-small">{{ helper:lang line='user_login_btn' }}</a>
+{{ endif }}
